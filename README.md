@@ -1,4 +1,4 @@
-Not Mine I have forked it from orignal author repo : https://github.com/AnnadataHackfest/Annadata
+Not Mine I have cloned it from orignal author repo : https://github.com/AnnadataHackfest/Annadata
 
 
 # Annadata
