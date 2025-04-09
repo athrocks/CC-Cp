@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  aibackend:
+    build: ./AIBackend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./AIBackend:/app
+    environment:
+      - FLASK_ENV=development
+
+  nodebackend:
+    build: ./NodeBackend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./NodeBackend:/app
+    environment:
+      - NODE_ENV=development
+
+  frontend:
+    build: ./ReactWebsite
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./ReactWebsite:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+
+    zulipbot:
+      build: ./AnnadataZulipBot
+      volumes:
+        - ./AnnadataZulipBot:/app
+      environment:
+        - ZULIP_CONFIG=/app/zuliprc
+
+    croprecommender:
+      build: ./CropRecommender
+      ports:
+        - "9000:9000"
+      volumes:
+        - ./CropRecommender:/app
+      environment:
+        - FLASK_ENV=development
+
+
+
+  # Optional: Add other services (e.g., crop recommender, Zulip bot) once confirmed
