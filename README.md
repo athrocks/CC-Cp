@@ -1,3 +1,6 @@
+Not Mine I have forked it from orignal author repo : https://github.com/AnnadataHackfest/Annadata
+
+
 # Annadata
 
 Annadata is a full-stack cross-platform application that provides complete assistance to farmers right from sowing to harvesting.
